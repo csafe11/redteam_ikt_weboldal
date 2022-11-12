@@ -1,88 +1,437 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="stilus.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.104.2" />
+    <title>RECEPTKLUB</title>
     <link
-      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
     />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Document</title>
+
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.2/examples/album/"
+    />
+
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+          inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+      }
+
+      section {
+        background-color: #c7ddcc;
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
   </head>
   <body>
-    <div class="container-fluid p-5 bg-primary text-white text-center">
-      <h1>Redteam receptkönyv</h1>
-      <p>Resize this responsive page to see the effect!</p>
-    </div>
-
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-lg-8">
-          <h3>Józsi kedvencei</h3>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris...
-          </p>
-        </div>
-        <div class="col-lg-4">
-          <h3></h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <img
-          src=https://www.koronascukor.hu/fileadmin/_processed_/e/c/csm_Schokowuerfel-Barbarine_7_cd6b0b3355.jpg
-          alt="" />
-          <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris...
-          </p>
-        </div>
-        <div class="col-lg-8">
-          <h3>Andi kedvencei</h3>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris...
-          </p>
-        </div>
-        <div class="col-lg-4">
-          <h3>Leírása</h3>
-          <img
-          src=https://www.koronascukor.hu/fileadmin/_processed_/6/a/csm_kokuszos_csokis_keksz_kicsi_be3afa6c14.jpg
-          alt="" />
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris...
-          </p>
-        </div>
-        <div class="col-lg-8">
-          <h3>Étel képe</h3>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris...
-          </p>
-        </div>
-        <div class="col-lg-4">
-          <h3>Leírása</h3>
-          <img
-            src="https://www.koronascukor.hu/fileadmin/_processed_/5/a/csm_Nusspops_Stiel_Catrin_2018_dfc7c139c5.jpg"
-            alt=""
-          />
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris...
-          </p>
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">RECEPTKLUB</h4>
+              <p class="text-muted">
+                Üdvözlünk recepklubbunkban, melynek te is tagja lehetsz, ha
+                szeretsz sütni, főzni. Ha vannak finom és kipróbált recetjeid,
+                melyeket másokkal is szívesen megosztanál. Inspirációt keresel?
+                Nálunk a helyed, böngéssz nyugodtan nálunk, és oszd meg
+                barátaiddal, ismerőseiddel!
+              </p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Kapcsolat</h4>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Követés Instagram</a></li>
+                <li><a href="#" class="text-white">Követés Facebook</a></li>
+                <li><a href="#" class="text-white">Email Küldés</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarHeader"
+            aria-controls="navbarHeader"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="py-5 text-center container">
+                  <img src="./Kepek/cooking.jpg" class="rounded float-start" alt="...">
+
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">RECEPTKLUB</h1>
+            <p class="lead text-muted" style="color: whitesmoke">
+              Üdvözlünk recepklubbunkban, melynek te is tagja lehetsz, ha
+              szeretsz sütni, főzni. Ha vannak finom és kipróbált recetjeid,
+              melyeket másokkal is szívesen megosztanál. Inspirációt keresel?
+              Jó helyen jársz, böngéssz nyugodtan nálunk, és oszd meg
+              barátaiddal, ismerőseiddel!
+            </p>
+            <p>
+              <a href="#" class="btn btn-primary my-2">Belépés/Regisztráció</a>
+              <a href="#" class="btn btn-secondary my-2">Feltöltés</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#ea8a81" />
+                  <text x="50%" y="50%" fill="#eceeef" dy=".5em">
+                    Andera kedvencei
+                  </text>
+                </svg>
+                <div class="card-body">
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        View
+                      </button>
+                  
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#301008" />
+                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                    Szilvia kedvencei
+                  </text>
+                </svg>
+
+                <div class="card-body">
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        View
+                      </button>
+                    
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#d85c27" />
+                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                    József kedvencei
+                  </text>
+                </svg>
+
+                <div class="card-body">
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        View
+                      </button>
+                 
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#b999be" />
+                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                    Gábor kedvencei
+                  </text>
+                </svg>
+
+                <div class="card-body">
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        View
+                      </button>
+                 
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#A96762" />
+                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                    Ferenc kedvencei
+                  </text>
+                </svg>
+
+                <div class="card-body">
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        View
+                      </button>
+                  
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#edob70" />
+                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                    Itt lesznek a Te kedvenceid
+                  </text>
+                </svg>
+
+                <div class="card-body">
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        View
+                      </button>
+                  
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+           
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="text-muted py-5">
+      <div class="container">
+        <p class="float-end mb-1">
+          <a href="#">Back to top</a>
+        </p>
+        <p class="mb-1">
+          Album example is &copy; Bootstrap, but please download and customize
+          it for yourself!
+        </p>
+        <p class="mb-0">
+          New to Bootstrap? <a href="/">Visit the homepage</a> or read our
+          <a href="../getting-started/introduction/">getting started guide</a>.
+        </p>
+      </div>
+    </footer>
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
